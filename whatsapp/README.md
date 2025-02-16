@@ -216,7 +216,7 @@
 
 ### Components
 
-#### LoadBalancer
+#### SystemDesign.LoadBalancer
 
 #### API Gateway
 

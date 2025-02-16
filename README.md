@@ -34,7 +34,7 @@ whenever reading you should get value of most recent write
 ## Partition Tolerance
 - Despite network fault the system should operate.
 
-# LoadBalancer
+# SystemDesign.LoadBalancer
 - Responsibility: distribute load uniformly
 - redirect to healthy instance
 - segregate the request

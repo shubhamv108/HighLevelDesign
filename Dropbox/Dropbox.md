@@ -206,7 +206,7 @@ PartitionKey= account_id
 # Cache
 ## Eviction
 
-## LoadBalancer
+## SystemDesign.LoadBalancer
 PeakExponentialWeightedMovingAverage
 
 ## RateLimiter

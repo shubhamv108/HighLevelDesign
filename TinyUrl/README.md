@@ -92,7 +92,7 @@
     - LRU for cache eviction
     - Replicate the caching servers tdistribute read load
 
-#### LoadBalancer
+#### SystemDesign.LoadBalancer
     - Forr distrubution load on Create & Redirect Service
 
 #### DB Cleanup

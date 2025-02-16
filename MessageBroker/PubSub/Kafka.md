@@ -62,3 +62,8 @@ Supported formats
 
 # Examples
 https://github.com/eugenp/tutorials/tree/master/apache-kafka
+
+
+# Deploy
+## Kubernetes operators
+1. Strimzi (Magic Marker 2 for cross region replication)

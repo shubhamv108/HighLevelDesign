@@ -67,7 +67,7 @@ PartitionKey=
 # Cache
 ## Eviction
 
-## LoadBalancer
+## SystemDesign.LoadBalancer
 
 ## RateLimiter
 429 - Too many requests
