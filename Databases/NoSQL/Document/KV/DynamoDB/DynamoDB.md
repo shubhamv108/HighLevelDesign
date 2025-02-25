@@ -150,17 +150,23 @@ Different PartitionKey & SortKey
 
 # Streams
 
-# Accelerator
-Caching
+# Accelerator (DAX)
+    Caching
 
 ## WCU (Write Capacity Unit) 
 ## RCU (Read Capacity Unit)
 
 # Scan
-Full table scan
+    Full table scan
 
 # Query
-On partition / range key
+    On partition / range key
 
 # page_size
-pagination
+    pagination
+
+
+# When NOT to use ?
+1. **Complex Query Patterns**: not optimized for complex joins & queries
+2. **Multi-table transactions**: has limit pn n. of items
+3. **Data Model Complexity**: lots of GSI & LSIs
