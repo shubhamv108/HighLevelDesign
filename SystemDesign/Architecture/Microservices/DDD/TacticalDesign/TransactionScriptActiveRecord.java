@@ -5,9 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class TransactionScript {
+public class TransactionScriptActiveRecord {
 
-    public class Account {
+    public class Account { // AggregateRoot
         private final Integer id;
         private Double balance;
 
@@ -49,6 +49,10 @@ public class TransactionScript {
         }
     }
 
+    class Money { // Value object, Immutable class
+
+    }
+
     public class BankTransactionExecutor {
 
         private final TransactionService transactionService;
@@ -59,6 +63,7 @@ public class TransactionScript {
             this.accountService = accountService;
         }
 
+        // TransactionExecuted
         public void executeTransaction(Transaction transaction, Connection conn) throws Exception {
             conn.setAutoCommit(false);
             try {
@@ -66,6 +71,7 @@ public class TransactionScript {
                 if ("W".equals(transaction.getCode()) ) {
                     if (account.getBalance() >= transaction.getAmount() && transaction.getAmount() > 0) {
                         transactionService.updateBalance(conn, account, account.getBalance() - transaction.getAmount());
+                        // WithdrawalExecuted
                     } else {
                         throw new Exception("Insufficient balance or invalid withdrawal amount.");
                     }
@@ -74,6 +80,7 @@ public class TransactionScript {
                         throw new Exception("Invalid deposit amount.");
                     }
                     transactionService.updateBalance(conn, account, account.getBalance() + transaction.getAmount());
+                    // DepositExecuted
                 }
                 transactionService.createTransaction(conn, transaction.getAccountId(), transaction.getAmount(), transaction.getCode());
                 conn.commit();
@@ -84,6 +91,7 @@ public class TransactionScript {
         }
     }
 
+    // Domain Service
     public class AccountService {
         public Account getAccountById(int accountId, Connection conn) throws SQLException {
             String sql = "SELECT * FROM account WHERE id = ?";
@@ -99,6 +107,7 @@ public class TransactionScript {
         }
     }
 
+    // Domain Service
     public class TransactionService {
         public void updateBalance(Connection conn, Account account, double newBalance) throws SQLException {
             String sql = "UPDATE account SET balance = ? WHERE id = ?";
