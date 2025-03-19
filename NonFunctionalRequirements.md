@@ -1,10 +1,11 @@
-- {Highly / } Scalable
+- Consistent / Eventually / Tunable Consistent
 - Available
 - Low Latency
 - High Throughput
 - Performant
-- Consistent / Eventually / Tunable Consistent
-- Fault Tolerent
+- {Highly / } Scalable
+- Fault Tolerant
+- Durable
 - Configurable
 - Deployable (multi ENV)
 - Maintainable

@@ -40,7 +40,7 @@ Media = (10M * 1MB * 365) =
 
 # Detailed Design
 ## HighLevelDesign
-![Messaging-HLD.png](HLD-Chat.png)
+![MessagingChat-HLD.png](HLD-Chat.png)
 
 ## APIs
 #### GET
@@ -110,9 +110,9 @@ desc text
 
 # Bottlenecks
 ## Websockets
-1. avoids recreation connection agaon & again
+1. avoids recreation connection again & again
 2. stateful connection
-3. uses hearbeat mechanism 
+3. uses heartbeat mechanism 
 4. ttl: 
 5. a connection can be upgraded via a load balancer to WebSocket, but you need to ensure that:
    - The load balancer supports WebSocket connections and is properly configured.

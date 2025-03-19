@@ -19,13 +19,13 @@
         <mxCell id="KaiG4uYOiYHfvJmb1827-5" value="API Gateway" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="200" y="50" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="KaiG4uYOiYHfvJmb1827-6" value="Distributed Messaging System (Random Partiioning)" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+        <mxCell id="KaiG4uYOiYHfvJmb1827-6" value="Distributed MessagingChat System (Random Partiioning)" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
           <mxGeometry x="390" y="50" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="KaiG4uYOiYHfvJmb1827-7" value="Distributed Messaging System (Random Partiioning)" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+        <mxCell id="KaiG4uYOiYHfvJmb1827-7" value="Distributed MessagingChat System (Random Partiioning)" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
           <mxGeometry x="400" y="60" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="KaiG4uYOiYHfvJmb1827-8" value="Distributed Messaging System (Random Partiioning &amp;amp; Replicated across Datacenters)" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+        <mxCell id="KaiG4uYOiYHfvJmb1827-8" value="Distributed MessagingChat System (Random Partiioning &amp;amp; Replicated across Datacenters)" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
           <mxGeometry x="410" y="70" width="120" height="100" as="geometry" />
         </mxCell>
         <mxCell id="KaiG4uYOiYHfvJmb1827-9" value="API Gateway" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -49,13 +49,13 @@
         <mxCell id="KaiG4uYOiYHfvJmb1827-17" value="Data Partitoiner" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="630" y="210" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="KaiG4uYOiYHfvJmb1827-18" value="Distrbuted Messaging System (Partitioned) (Kafka)" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+        <mxCell id="KaiG4uYOiYHfvJmb1827-18" value="Distrbuted MessagingChat System (Partitioned) (Kafka)" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
           <mxGeometry x="830" y="190" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="KaiG4uYOiYHfvJmb1827-19" value="Distrbuted Messaging System (Partitioned) (Kafka)" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+        <mxCell id="KaiG4uYOiYHfvJmb1827-19" value="Distrbuted MessagingChat System (Partitioned) (Kafka)" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
           <mxGeometry x="840" y="200" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="KaiG4uYOiYHfvJmb1827-20" value="Distrbuted Messaging System (Partitioned) (Kafka)" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+        <mxCell id="KaiG4uYOiYHfvJmb1827-20" value="Distrbuted MessagingChat System (Partitioned) (Kafka)" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
           <mxGeometry x="850" y="210" width="120" height="70" as="geometry" />
         </mxCell>
         <mxCell id="KaiG4uYOiYHfvJmb1827-21" value="Partition Processor" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
