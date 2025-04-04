@@ -27,6 +27,23 @@
                 The low-water mark is set to offset 2.
                 Messages with offsets < 2 are eligible for deletion based on retention policies.
 
+# Broker
+```retention.ms=7days```
+```retention.bytes=1GB```
+
+# Producer
+### Idempotent
+Each producer is assigned a ProducerID. 
+```producer.enable.idempotence=true``` on producer
+```producer.aks=all```
+
+# Rebalance
+
+
+### Batch
+```batch.size={bytes}```
+```linger.ms={ms}```
+```compression.type=gzip/snapppy/lz4```
 
 # [Listeners](https://www.confluent.io/blog/kafka-listeners-explained/)
 

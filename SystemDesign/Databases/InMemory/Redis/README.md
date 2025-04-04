@@ -17,7 +17,6 @@ Snapshotting
           save 60 1000
       ```
 
-
 2. AOF
 Advantages
     - Using AOF Redis is much more durable
@@ -30,7 +29,6 @@ Advantages
    -
 
 Disadvantages
-
     - AOF files are usually bigger than the equivalent RDB files for the same dataset.
     - AOF can be slower than RDB depending on the exact fsync policy.
     - fsync set to every second performance is still very high,

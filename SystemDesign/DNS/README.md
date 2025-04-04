@@ -1,6 +1,6 @@
-# DNS Resolver
+# SystemDesign.DNS Resolver
 Provided by ISP
-### Google Public DNS Resolver
+### Google Public SystemDesign.DNS Resolver
 8.8.8.8
 ### OpenDNS
 

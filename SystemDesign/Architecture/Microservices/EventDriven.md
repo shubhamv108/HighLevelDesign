@@ -1,0 +1,2 @@
+Event-driven architecture (EDA) is an approach to software architecture that emphasizes the production, detection, and consumption of events 
+as a primary means of communication between software components. 

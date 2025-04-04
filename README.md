@@ -57,7 +57,7 @@ whenever reading you should get value of most recent write
 - Leads to reduction in latency and n/w traffic
 ## Client Side Cache
 - Cookies
-- DNS entries cache in os, browser
+- SystemDesign.DNS entries cache in os, browser
 - reduce access to n/w traffic & resources
 ## Server Side Cache
 - cache freq access data on server

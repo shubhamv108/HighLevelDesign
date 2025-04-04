@@ -59,7 +59,7 @@ we can use ~30% of all bandwidth for scraping
 
 # Design
 ## Flow
-1. Take seed urls from a frontier and IP from DNS
+1. Take seed urls from a frontier and IP from SystemDesign.DNS
 2. Fetch HTML
 3. Extract text from HTML
 4. Store that text in db
@@ -74,7 +74,7 @@ we can use ~30% of all bandwidth for scraping
    - fetch the webpage
    - extract the text
    - extract the urls
-3. DNS Caching, DNS Resolver [Open DNS, ...] (Round Robin b/w multiple dns resolvers)
+3. SystemDesign.DNS Caching, SystemDesign.DNS Resolver [Open SystemDesign.DNS, ...] (Round Robin b/w multiple dns resolvers)
 4. Parsing Queue (html blobId)
 5. Parsing Worker
    - extract the text (from DOM)

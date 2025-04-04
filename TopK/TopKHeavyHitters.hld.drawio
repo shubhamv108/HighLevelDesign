@@ -70,10 +70,10 @@
         <mxCell id="KaiG4uYOiYHfvJmb1827-24" value="Distributed File System" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1210" y="210" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="KaiG4uYOiYHfvJmb1827-25" value="MapReduce For Frequency Count" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="KaiG4uYOiYHfvJmb1827-25" value="SystemDesign.MapReduce For Frequency Count" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1400" y="210" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="KaiG4uYOiYHfvJmb1827-26" value="MapReduce for TopK" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="KaiG4uYOiYHfvJmb1827-26" value="SystemDesign.MapReduce for TopK" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1590" y="210" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="KaiG4uYOiYHfvJmb1827-27" value="" style="endArrow=classic;startArrow=classic;html=1;" parent="1" source="KaiG4uYOiYHfvJmb1827-1" edge="1">

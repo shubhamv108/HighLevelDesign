@@ -1,0 +1,148 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36" version="26.0.10">
+  <diagram name="Page-1" id="j2Sttxcgs0gMbRfoL3xm">
+    <mxGraphModel dx="4111" dy="793" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="We50DLUmuZvsDnmghhWC-1" value="Gateway&lt;br&gt;LB&lt;br&gt;Rate Limiting&lt;br&gt;&lt;div&gt;Service Discovery&lt;br&gt;Whitelisting&lt;br&gt;Routing&lt;br&gt;Authetication&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-220" y="350" width="120" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-2" value="User SVC" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-3" value="AuthServer" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-90" y="180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-4" value="PostgreSQL" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="260" y="270" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-5" value="Booking SVC" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="500" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-6" value="PostgreSQL" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="767" y="750" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-7" value="Train (Search SVC)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="690" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-8" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.567;exitY=0.002;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="We50DLUmuZvsDnmghhWC-1" target="We50DLUmuZvsDnmghhWC-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="430" as="sourcePoint" />
+            <mxPoint x="440" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-9" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="We50DLUmuZvsDnmghhWC-1" target="We50DLUmuZvsDnmghhWC-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="430" as="sourcePoint" />
+            <mxPoint x="440" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-10" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.042;entryY=0.883;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="We50DLUmuZvsDnmghhWC-1" target="We50DLUmuZvsDnmghhWC-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="430" as="sourcePoint" />
+            <mxPoint x="170" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-11" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.05;entryY=0.588;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="We50DLUmuZvsDnmghhWC-5" target="We50DLUmuZvsDnmghhWC-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="430" as="sourcePoint" />
+            <mxPoint x="440" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-12" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="We50DLUmuZvsDnmghhWC-2" target="We50DLUmuZvsDnmghhWC-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="430" as="sourcePoint" />
+            <mxPoint x="440" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-13" value="PostgreSQL" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="354" y="700" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-14" value="Elasticsearch" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="230" y="780" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-15" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="We50DLUmuZvsDnmghhWC-7" target="We50DLUmuZvsDnmghhWC-14">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="790" as="sourcePoint" />
+            <mxPoint x="440" y="740" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-18" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=52.5;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="We50DLUmuZvsDnmghhWC-7" target="We50DLUmuZvsDnmghhWC-13">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="790" as="sourcePoint" />
+            <mxPoint x="440" y="740" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-21" value="" style="endArrow=classic;html=1;rounded=0;exitX=1.008;exitY=0.849;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="We50DLUmuZvsDnmghhWC-1" target="We50DLUmuZvsDnmghhWC-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="790" as="sourcePoint" />
+            <mxPoint x="440" y="740" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-23" value="Redis (RouteStationAvailability)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="260" y="400" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-24" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=-15;entryPerimeter=0;" edge="1" parent="1" source="We50DLUmuZvsDnmghhWC-5" target="We50DLUmuZvsDnmghhWC-23">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="790" as="sourcePoint" />
+            <mxPoint x="440" y="740" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-25" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="-570" y="540" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.017;entryY=0.521;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="We50DLUmuZvsDnmghhWC-25" target="We50DLUmuZvsDnmghhWC-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-27" value="kafka (PK - routeId)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="500" width="420" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-28" value="Consumer - booking Confirmartion" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="520" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-29" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="We50DLUmuZvsDnmghhWC-6" target="We50DLUmuZvsDnmghhWC-28">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="670" as="sourcePoint" />
+            <mxPoint x="440" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-30" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="1" source="We50DLUmuZvsDnmghhWC-27" target="We50DLUmuZvsDnmghhWC-28">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="670" as="sourcePoint" />
+            <mxPoint x="440" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-31" value="" style="endArrow=classic;html=1;rounded=0;exitX=1.033;exitY=0.367;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="We50DLUmuZvsDnmghhWC-5" target="We50DLUmuZvsDnmghhWC-27">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="670" as="sourcePoint" />
+            <mxPoint x="440" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-32" value="Redis&lt;br&gt;(curSeatNumberAvaibility pointer, RouteStationAvailability)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="1241" y="430" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-33" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="We50DLUmuZvsDnmghhWC-28" target="We50DLUmuZvsDnmghhWC-32">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="670" as="sourcePoint" />
+            <mxPoint x="440" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-34" value="Redis" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="150" y="210" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-35" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.358;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=1;entryDx=0;entryDy=-15;entryPerimeter=0;" edge="1" parent="1" source="We50DLUmuZvsDnmghhWC-2" target="We50DLUmuZvsDnmghhWC-34">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="550" as="sourcePoint" />
+            <mxPoint x="440" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="We50DLUmuZvsDnmghhWC-36" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.2;exitY=1.017;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="We50DLUmuZvsDnmghhWC-5" target="We50DLUmuZvsDnmghhWC-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="550" as="sourcePoint" />
+            <mxPoint x="440" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

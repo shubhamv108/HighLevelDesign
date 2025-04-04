@@ -245,9 +245,9 @@
     It maintains heartbeat with client by sending ping pong messages evrry 10 seconds
     When user does not reply with pong for 30 seconds then it updates the user connection state in WbSocket Manager
 
-#### DNS Geographical Load Balancer
+#### SystemDesign.DNS Geographical Load Balancer
 
-#### DNS
+#### SystemDesign.DNS
 
 #### Image Upload Service
     Uploaded file is saved in bucket for user in blob store
@@ -262,7 +262,7 @@
 ## Flow Diagrams
 
 ## Technology Stack
-    DNS Load Balancer: AWS Route53 (Geoproximity routing policy|Latency routing policy|)
+    SystemDesign.DNS Load Balancer: AWS Route53 (Geoproximity routing policy|Latency routing policy|)
     Load Balancer: Custom|NGINX|AWS ELB
     TLS Termination proxy: NGINX
     Server Host Machine: AWS EC2 (AWS Auto Scaling Group/service)

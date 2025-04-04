@@ -83,7 +83,7 @@ Generate a **signedAdImpressionId**
 5. Kafka (Event stream) {PartitionKey: AdId::0-N} , limit 1000 records / sec,  day retention
 6. Stream aggregator (Flink {AdId: 1, minute; 45, count: <12>}, Aggregation Window=1min, FlushIntervals=10secs)
 7. S3 (event dump)
-8. MapReduce (Transformation ? Aggregation Jobs)
+8. SystemDesign.MapReduce (Transformation ? Aggregation Jobs)
 9. Cron Scheduler (hourly, daily, weekly, monthly)
 10. Reconciliation Worker
 11. Query SVC (OLAP (Amazon Redshift))

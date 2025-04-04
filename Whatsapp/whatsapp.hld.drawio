@@ -329,7 +329,7 @@
         <mxCell id="yqy9BGV4hBucA23t-8WJ-48" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-750" y="-325" width="280" height="190" as="geometry" />
         </mxCell>
-        <mxCell id="yqy9BGV4hBucA23t-8WJ-49" value="DNS Geographical Load Balancer" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+        <mxCell id="yqy9BGV4hBucA23t-8WJ-49" value="SystemDesign.DNS Geographical Load Balancer" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="-700" y="-320" width="190" height="20" as="geometry" />
         </mxCell>
         <mxCell id="yqy9BGV4hBucA23t-8WJ-51" value="chat.Whatsapp.com &amp;lt;IP_Adress&amp;gt;, &amp;lt;Goe_location&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
