@@ -50,6 +50,7 @@
   declaring the operation’s overall success.**
 - Best performance (throughput/availability) when 1 < r < w < n,
   because reads are more frequent than writes in most applications.
+  
 
 # Leader and Follower
 - Allow only a single server (called leader) to be responsible for data replication and to coordinate work.

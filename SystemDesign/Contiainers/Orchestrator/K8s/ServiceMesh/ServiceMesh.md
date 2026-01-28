@@ -25,3 +25,9 @@ is in Data plane
 - Configuration Manager - Galley
 - Traffic Controller - Pilot
 - Security Manager - Citadel
+- Console - kiali
+- Log Aggregator - Loki
+- APM - Skywalking
+
+## Istio System Namespace - Sidecar
+1) discovery

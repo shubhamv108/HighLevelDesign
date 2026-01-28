@@ -1,0 +1,18 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: test
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ../db/migration/init.sql:/docker-entrypoint-initdb.d/init.sql  # optional: run setup script
+      - ../db/migration/persons.sql:/docker-entrypoint-initdb.d/persons.sql  # optional: run setup script
+
+volumes:
+  postgres_data:
