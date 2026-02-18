@@ -31,6 +31,8 @@ This is AWS's true global load balancing service with anycast IPs:
     4. SSL offloading and caching
     5. Path-based and host-based routing
     6. Best for web applications and APIs
-    7. Layer 7
+    7. Layer 7 only
 
 # Azure Cross-Region Load Balancer (Layer 4 - TCP/UDP)
+    4. Layer 4
+    5. Supports UDP and TCP

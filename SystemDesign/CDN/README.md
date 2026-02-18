@@ -14,7 +14,7 @@
         c. Lambda@Edge (Custom Routing Logic)
    11. Signed URLs and Signed Cookies
 
-# GCP Cloud CDN
+# GCP SystemDesign.Cloud CDN
     1. Content caching
     2. SSL/TLS termination
     3. Compression (gzip, brotli)

@@ -1,6 +1,6 @@
 # GCP-CRIALB
     1. Regional private IPs
-    2. Requires Cloud DNS private zones for routing
+    2. Requires SystemDesign.Cloud DNS private zones for routing
     7. Layer 7
 
 # GCP-CRINLB

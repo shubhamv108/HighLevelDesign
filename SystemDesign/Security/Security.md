@@ -1,7 +1,7 @@
 ### Firewall
 #### Security Group (Least Priveledge)
 
-### VPC (Virtual Private Cloud)
+### VPC (Virtual Private SystemDesign.Cloud)
 
 ### Identity
 #### Authentication
