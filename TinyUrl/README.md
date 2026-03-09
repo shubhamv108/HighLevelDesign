@@ -2,7 +2,7 @@
     1) our service should generate a shorter and unique alias (shortened URL is nearly one-third the size of the actual URL)
     2) our service should redirect them to the original link
     3) custom short link for their URL
-    4) Links will expire after a standard default timespan. Users should be able to specify the expiration time.
+    4) Links will expire after a standard default time span. Users should be able to specify the expiration time.
 
 
 #### Non-Functional Requirements
@@ -12,7 +12,7 @@
 
 ### Extended Requirements
     1) Analytics; e.g., redirections
-    2) Accesible through REST Apis
+    2) Accessible through REST Apis
 
 ### Estimations
 #### Traffic
@@ -60,11 +60,19 @@
           last_login:DateTime)
 
 #### Algorithms
-    Base64Encoding(MD5Hash(original_url)=128Bits))
-    TotalUniqueShortenedUrls= 64^21
-    6LetterShortenedUrl = 64^6 = 6 Billion possible strings
-    8LetterShortenedUrl = 64^8 = 281 Trillion possible strings
-    On duplication Swap any charcaters
+    Base62(SnowflakeID)
+        ~11 characters in length
+        62^11
+    Base62(Redis Counter)
+
+    Base62(UUIDv7)
+        ~22 characters in length
+        62^22
+    Base62(MD5Hash(original_url)=128Bits))
+        TotalUniqueShortenedUrls= 62^21
+        6LetterShortenedUrl = 62^6 = 6 Billion possible strings
+        8LetterShortenedUrl = 62^8 = 281 Trillion possible strings
+        On duplication Swap any characters
 
 #### Components
 ##### Creation Service
@@ -77,26 +85,43 @@
 ##### Key GenerationService
     KeyDB:
         UsedKeys(keys), AvailableKeys(keys) 
-        Strorage: 10bytes * 70B = 700GB
-    Cahce keys in Application server for fast access
+        Storage: 10bytes * 70B = 700GB
+    Cache keys in Application server for fast access
+    Not useful with SnowflakeID generation
 ##### Cleanup Service
     - Should run when traffic is low
     - Default expiration time of 2 years
 
-
-#### Partitioning
-    - ConsisitentHashing on shortened_url
-
 #### Cache
     - 20% of daily hot traffic
     - LRU for cache eviction
-    - Replicate the caching servers tdistribute read load
+    - Replicate the caching servers to distribute read load
 
 #### SystemDesign.LoadBalancer
-    - Forr distrubution load on Create & Redirect Service
+    - For distribution of load on Create & Redirect Service
+    - RoundRobin / LeastConnection
 
 #### DB Cleanup
-    - Asychronously delete expired links when user tries to access
+    - Asynchronously delete expired links when user tries to access
     
 #### Telemetry
-    - Metrics, Alarms, visitor, most redirects, comming from
+    - Metrics, Alarms, visitor, most redirects, coming from
+
+
+## Follow Ups
+### How would you handle Redis failures or restarts for the counter service, given that losing the counter state could lead to duplicate short URLs?
+Redis will be able to handle 20K counter increement requests per second. Redis uses AOF for imeediate rurability.
+in case replica is updated to master during failover in redis sentinel then counter in replica might lag from counter in master due to asynchrous replication in redis. this might create some duplicates. To avoid duplicates we checkpoint  the counter + 10000 in database every 1 min from primary and have new primary start from this chekpoint which it fetches during startup using a script.
+the checkpoint buffer and frequency can be tunable based on real life practice and load on the system
+
+### How can we ensure that redirects are fast?
+"We can cache the recently used short urls in the redis cache. so we do not have to hit the database for all shortuls which are cached. we set the expiry for them as ttl in redis. similarly we can cache them in CDN with expiry. Which will reduce load on servers. CDN reduces latency as these are geographically distributed nodes closer to the user. for redirect user hits the CDN and then cdn forwards to LB incase it is not cached in cdn. Although if CDn is used then request will not reach backend and analtics will not be possible"
+
+### How would you set the TTL values for your CDN cache versus your Redis cache, and what factors would influence those decisions?
+Set longer TTLs on the CDN (hours to days) since edge invalidation is hard, and shorter TTLs on Redis (minutes to hours) since it is centralized and easy to refresh, then tie both to link expiration and invalidation strategy. Creation time can live in Redis for freshness checks.
+Given too high read to write ratio longer expiration makes more sense. CDn can have longer expiration for popular urls. Although redis ttl should be shorter thean actual expiration of the shorturl. bedefault redis can have 1 hour of ttl and cdn can have 24 hour ttl. but this could be minimum of url expiration and ttl for each caching layer."
+
+### How can your system scale to support 10k redirects (reads) per second?
+"Redirect requests comes through CDN.
+CDN should be able to handle 80% of the redirect load. remaining will come to redis and the database. redis can handle 20K requests per second. we can have read replicas of our database and reads requests can go to read replicas instead overloading the master.
+our services can scale out automatiaccaly on bases of cpu, memory ussage to hand;e the requests. load balncer cuses round roben algo to keep equal load on each URl shortening Redirection service applicaiton instance."
