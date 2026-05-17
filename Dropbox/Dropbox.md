@@ -206,7 +206,7 @@ devices
 # Cache
 ## Eviction
 
-## SystemDesign.LoadBalancer
+## SystemDesign.LoadBalance
     PeakExponentialWeightedMovingAverage
 
 ## RateLimiter

@@ -97,7 +97,7 @@
     - LRU for cache eviction
     - Replicate the caching servers to distribute read load
 
-#### SystemDesign.LoadBalancer
+#### SystemDesign.LoadBalance
     - For distribution of load on Create & Redirect Service
     - RoundRobin / LeastConnection
 

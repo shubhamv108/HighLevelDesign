@@ -39,6 +39,9 @@
     spring-boot-starter-actuator
         @EnableScheduling // Enable scheduled tasks monitoring
 
+## Development
+    org.springframework.boot:spring-boot-devtools
+
 ## Web
     spring-boot-starter-web
         @RestController // RESTful web services
@@ -73,6 +76,13 @@
         @CachePut // Update cache
         @RedisHash // Mark entity for Redis storage
         @EnableRedisRepositories // Enable Redis repositories
+    org.flywaydb:flyway-core
+
+## Kafka
+    org.springframework.kafka:spring-kafka
+
+## Configuration
+    org.springframework.boot:spring-boot-configuration-processor
 
 ## Security
     spring-boot-starter-security
@@ -98,8 +108,14 @@
     micrometer-tracing-bridge-brave
     zipkin-reporter-brave
     micrometer-tracing-bridge-otel
+        @Observed
+        @NewSpan
+        @ContinueSpan
+        @SpanTag
 
 ### ServiceDiscovery
+    spring-cloud-starter-netflix-eureka-server
+        @EnableEurekaServer
     spring-cloud-starter-netflix-eureka-client
         @EnableEurekaClient
         @EnableDiscoveryClient
