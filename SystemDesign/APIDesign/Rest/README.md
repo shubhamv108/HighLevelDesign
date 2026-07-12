@@ -119,9 +119,9 @@ Content-Type: application/json
 
 ## Payment
 ```
-POST /payments/:paymentIntentId/transactions
+POST /v1/payments/:paymentIntentId/transactions
 Headers {
-    Authorization: jwt(claim: merchnatId)
+    Authorization: jwt(claim: merchantId)
     X-Api-Key: merchant-api-key-value
     X-Request-TimeStamp: timestampz
     X-Request-Nonce: unique-non-value (cached in db for unique)

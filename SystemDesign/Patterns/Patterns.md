@@ -9,7 +9,7 @@
 - They help reduce the number of disk accesses by predicting if an SSTable
   may contain data corresponding to a particular row or column pair.
 
-# ConsistentHashing
+# SystemDesign.ConsistentHashing
 - Consistent Hashing maps data to physical nodes and ensures that only a
   small set of keys move when servers are added or removed.
 - Potential issues associated with a manual and fixed division of the ranges:

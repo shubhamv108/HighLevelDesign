@@ -67,7 +67,7 @@ Different PartitionKey & SortKey
 - is designed for high **availability** and **partition tolerance** at the expense of **strong consistency**.
 - Dynamo treats both the object and the key as an arbitrary array of bytes (typically less than 1 MB)
 - Uses **MD5** Algo to generate a 128bit identifier to determine storage needs.
-- Uses **ConsistentHashing**
+- Uses **SystemDesign.ConsistentHashing**
 - Replicated Data to **SloppyQuorum**
 - Use **GossipProtocol** to keep track of cluster state
 - **"Always Writable"** or (High Write Availability) with **HintedHandoffs**

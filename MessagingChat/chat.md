@@ -54,7 +54,7 @@ Media = (10M * 1MB * 365) =
     Sec-WebSocket-Version: 13   # Required: WebSocket protocol version (13 is standard)
     Origin: https://example.com # Optional: Origin of the client (security check)
     Sec-WebSocket-Protocol: chat, superchat      # Optional: Sub-protocols the client supports
-    Sec-WebSocket-Extensions: permessage-deflate # Optional: Extensions (e.g., compression)
+    Sec-WebSocket-Extensions: permessage-deflate # Optional: Extensions (e.g., SystemDesign.Compression)
 #### Response
 ##### Headers
     HTTP/1.1 101 Switching Protocols

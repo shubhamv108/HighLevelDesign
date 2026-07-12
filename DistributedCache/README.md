@@ -60,7 +60,7 @@ ShardingTechniques
 - in-case if a shard (primary + replica) is down then either whole cluster fails or only the shard fails (this can be configurable)
 
 2. Consistent Hashing
-- configure multiple shards. and use ConsistentHashing algorithm for calculating the shard for current key.
+- configure multiple shards. and use SystemDesign.ConsistentHashing algorithm for calculating the shard for current key.
 - in case if a shard (primary + replica) is down. this will avoid failures as keys will get distributed to other shards. although cache miss for those shards will increase.
 - during failure of a shard due to mny requests can create a domino effect on other shards as the load from them will be transfered to them.
 

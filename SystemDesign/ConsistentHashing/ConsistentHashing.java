@@ -1,4 +1,4 @@
-package ConsistentHashing;
+package SystemDesign.ConsistentHashing;
 
 import java.util.SortedMap;
 import java.util.TreeMap;

@@ -15,3 +15,7 @@ Special States:
     Circuit breaker is turned off completely. All requests pass through, no state tracking, no metrics. Has to be manually triggered.
 5. FORCED_OPEN
     Manually forced open. All requests rejected regardless of actual failure rate. Useful for maintenance or manual intervention.
+
+
+## Options
+1. Resilliance4j

@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "0e96c271f45c1592",
+        "id": "d26b9aad7b358818",
         "type": "tabs",
         "children": [
           {
-            "id": "0d38358e394df7b1",
+            "id": "5231d1d4c1dfa269",
             "type": "leaf",
             "state": {
-              "type": "graph",
+              "type": "empty",
               "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -143,6 +143,16 @@
               "icon": "lucide-list",
               "title": "Outline"
             }
+          },
+          {
+            "id": "7286cb9a043def3d",
+            "type": "leaf",
+            "state": {
+              "type": "local-llm-chat-view",
+              "state": {},
+              "icon": "bot",
+              "title": "Local llm"
+            }
           }
         ]
       }
@@ -159,11 +169,14 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "local-llm-hub:Open chat": false
     }
   },
-  "active": "0d38358e394df7b1",
+  "active": "5231d1d4c1dfa269",
   "lastOpenFiles": [
+    "LocalLlmHub/workspace-state.json",
+    "LocalLlmHub",
     "RateLimit.md",
     "LeakyBucket.md",
     "TokenBucket.md"

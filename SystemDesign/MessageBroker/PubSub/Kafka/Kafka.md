@@ -43,7 +43,7 @@ Each producer is assigned a ProducerID.
 ### Batch
 ```batch.size={bytes}```
 ```linger.ms={ms}```
-```compression.type=gzip/snapppy/lz4```
+```SystemDesign.Compression.type=gzip/snapppy/lz4```
 
 # [Listeners](https://www.confluent.io/blog/kafka-listeners-explained/)
 

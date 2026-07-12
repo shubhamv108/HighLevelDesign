@@ -20,9 +20,7 @@ public class OtpService {
             String userId,
             String purpose,
             String challengeId,
-            long currentEpochSeconds
-                                    ) throws Exception {
-
+            long currentEpochSeconds) throws Exception {
         long timeWindow = getTimeWindow(currentEpochSeconds);
 
         String data = userId + ":" + purpose + ":" + challengeId + ":" + timeWindow;
@@ -34,6 +32,31 @@ public class OtpService {
         // Take last 6 digits (or 4–8 as you want)
         int otpLength = 6;
         return base62.substring(Math.max(0, base62.length() - otpLength));
+    }
+
+    public static int generateNumericOtp(
+            String userSecret,
+            String userId,
+            String purpose,
+            String challengeId,
+            long currentEpochSeconds) throws Exception {
+
+        long timeWindow = getTimeWindow(currentEpochSeconds);
+        String data = userId + ":" + purpose + ":" + challengeId + ":" + timeWindow;
+        byte[] hmac = hmacSha256(userSecret, data);
+
+        // RFC 6238-style dynamic truncation
+        int offset = hmac[hmac.length - 1] & 0x0F;
+        int code = ((hmac[offset]     & 0x7F) << 24)
+                | ((hmac[offset + 1] & 0xFF) << 16)
+                | ((hmac[offset + 2] & 0xFF) << 8)
+                |  (hmac[offset + 3] & 0xFF);
+
+        int OTP_LENGTH = 6;                        // change to 4–8 as needed
+        int otp = code % (int) Math.pow(10, OTP_LENGTH);
+
+        // Zero-pad to ensure consistent length (e.g. 000412 not 412)
+        return Integer.valueOf(String.format("%0" + OTP_LENGTH + "d", otp));
     }
 
     private static byte[] hmacSha256(String key, String data) throws Exception {

@@ -62,17 +62,22 @@
 #### Algorithms
     Base62(SnowflakeID)
         ~11 characters in length
-        62^11
-    Base62(Redis Counter)
-
-    Base62(UUIDv7)
+        62^11)
+    5. Base62(SHA1(SnowflakeID) first 6 characters  (1Sign+41Timestamp+10MachineId(Zookeeper-EphemeralSequentialNodes)+12SeqNum)
+        ~6 characters in length
+        62^6
+        50% chance of duplicate
+    6. Base62(Redis Counter)
+    4. Counter
+    2. Base62(UUIDv7)
         ~22 characters in length
         62^22
-    Base62(MD5Hash(original_url)=128Bits))
+    1. Base62(sha1(original_url)=128Bits))
         TotalUniqueShortenedUrls= 62^21
         6LetterShortenedUrl = 62^6 = 6 Billion possible strings
         8LetterShortenedUrl = 62^8 = 281 Trillion possible strings
         On duplication Swap any characters
+    3. KGS
 
 #### Components
 ##### Creation Service
