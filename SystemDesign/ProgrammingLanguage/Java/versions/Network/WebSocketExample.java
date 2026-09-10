@@ -1,4 +1,4 @@
-package ProgrammingLanguage.Java.versions.Network;
+package SystemDesign.ProgrammingLanguage.Java.versions.Network;
 
 import java.net.URI;
 import java.net.http.HttpClient;

@@ -1,0 +1,163 @@
+1. Monitor with VisualVM
+
+Attach VisualVM to your Java process and go to:
+
+Monitor → Heap
+
+Watch Heap over time while your application handles traffic.
+
+A leak looks like:
+
+Heap
+ ^
+ |                    /
+ |                  /
+ |                /
+ |              /
+ |___________/
+ +------------------> Time
+
+The important thing is what happens after GC.
+
+If you see:
+
+Before GC   After GC
+--------------------
+1.0 GB       300 MB
+1.5 GB       350 MB
+2.0 GB       500 MB
+2.5 GB       700 MB
+3.0 GB       1.0 GB   ← suspicious
+
+the post-GC baseline continually increasing is a strong leak signal.
+
+2. Force GC in VisualVM
+
+In VisualVM:
+
+Monitor → Perform GC
+
+Then observe the heap.
+
+For example:
+
+Before GC: 2.8 GB
+After GC:  500 MB
+
+That's good.
+
+Later:
+
+Before GC: 3.0 GB
+After GC:  900 MB
+
+Then:
+
+Before GC: 3.2 GB
+After GC: 1.4 GB
+
+That's suspicious.
+
+3. Use jmap -histo
+
+First find your PID:
+
+jps -lv
+
+Then:
+
+jmap -histo:live <PID>
+
+You'll get something like:
+
+num     #instances      #bytes
+--------------------------------
+1       5,000,000       400 MB  java.lang.String
+2       2,000,000       160 MB  [B
+3       1,500,000       120 MB  com.mycompany.Request
+4       1,000,000        80 MB  java.util.HashMap$Entry
+
+Look for classes whose instance count keeps increasing between snapshots.
+
+For example:
+
+Snapshot 1:
+Request = 100,000
+
+Snapshot 2:
+Request = 500,000
+
+Snapshot 3:
+Request = 2,000,000
+
+That's a strong clue.
+
+4. Take a heap dump with jmap
+
+Once you've confirmed suspicious growth:
+
+jmap -dump:live,format=b,file=/tmp/heap.hprof <PID>
+
+Then open the .hprof in VisualVM:
+
+File → Load → heap.hprof
+
+You can inspect:
+
+Classes
+Instances
+References
+Object counts
+Heap usage
+
+For deeper analysis, Eclipse MAT is usually better than VisualVM for finding the exact retention path.
+
+5. Very useful trick: take TWO dumps
+
+This is often much more useful than one dump.
+
+Traffic starts
+     ↓
+Take heap dump #1
+     ↓
+Run application for 30–60 min
+     ↓
+Take heap dump #2
+     ↓
+Compare object counts
+
+For example:
+
+                    Dump #1       Dump #2
+------------------------------------------------
+Request             100K          2.1M
+HashMap.Entry       150K          2.3M
+String              800K          8.5M
+
+Now investigate what is retaining those objects.
+
+VisualVM + jmap workflow
+VisualVM
+   ↓
+Monitor heap
+   ↓
+Perform GC
+   ↓
+Post-GC heap keeps increasing?
+   ↓ YES
+jmap -histo:live
+   ↓
+Find growing class
+   ↓
+jmap -dump:live,...
+   ↓
+VisualVM / MAT
+   ↓
+Find references / GC Root
+   ↓
+Fix the retaining collection/reference
+
+One correction to your earlier wording: the command is jmap, not jmax.
+
+If you're on Java 7, I can also
+show you the exact VisualVM screens/tabs to click to identify the leaking class.

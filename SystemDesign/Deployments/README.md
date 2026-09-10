@@ -57,7 +57,7 @@
 Toggle features on/off at runtime, per user or environment.
 - ex. LaunchDarkly, Optimizely, Unleash
 
-# A/B testing (Spli testing strategy)
+# A/B testing (Split testing strategy)
 - run two (or more) versions of a feature
 - Users are randomly assigned to different versions (A, B, etc.).
 - Used to measure impact before a full rollout

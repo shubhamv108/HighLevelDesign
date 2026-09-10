@@ -1,4 +1,4 @@
-package ProgrammingLanguage.Java.versions.Switch;
+package SystemDesign.ProgrammingLanguage.Java.versions.Switch;
 
 // Define a sealed interface with subclasses
 sealed interface Shape permits Circle, Rectangle, Triangle {}

@@ -1,4 +1,4 @@
-package ProgrammingLanguage.Java.versions.StramAPI;
+package SystemDesign.ProgrammingLanguage.Java.versions.StramAPI;
 
 import java.util.List;
 import java.util.stream.Collectors;

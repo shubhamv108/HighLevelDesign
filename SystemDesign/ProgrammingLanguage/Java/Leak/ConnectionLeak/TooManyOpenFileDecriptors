@@ -1,0 +1,41 @@
+```
+java.net.SocketException: Too many open files
+```
+
+Example
+```
+HttpURLConnection connection = null;
+InputStream input = null;
+
+try {
+    connection = (HttpURLConnection) url.openConnection();
+
+    int status = connection.getResponseCode();
+
+    input = connection.getInputStream();
+
+    // Read the response completely
+} finally {
+    if (input != null) {
+        input.close();
+    }
+}
+
+try {
+    connection = (HttpURLConnection) url.openConnection();
+
+    int status = connection.getResponseCode();
+
+    input = connection.getInputStream();
+
+    // Read the response completely
+} finally {
+    if (input != null) {
+        input.close();
+    }
+}
+
+if (connection != null) {
+    connection.disconnect();
+}
+```

@@ -1,4 +1,4 @@
-package ProgrammingLanguage.Java.versions.Switch;
+package SystemDesign.ProgrammingLanguage.Java.versions.Switch;
 
 public class SwitchExpressionExample {
     public static void main(String[] args) {

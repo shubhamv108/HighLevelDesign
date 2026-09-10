@@ -1,4 +1,4 @@
-package DistributedSystems.Clock;
+package SystemDesign.DistributedSystems.Clock;
 
 public class HybridTimestamp implements Comparable<HybridTimestamp> {
     private final long wallClockTime;

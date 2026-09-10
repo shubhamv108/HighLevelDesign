@@ -7,7 +7,7 @@
 
 ## NonFn
 1. Ultra low latency (<50ms)
-2. High Throughput (1M+ messages per sec), especailly during market open close burst
+2. High Throughput (1M+ messages per sec), especially during market open close burst
 3. Fairness (Strict FIFO)
 4. Fault Tolerance
 
@@ -44,7 +44,7 @@
 - ExecutionReport (MsgType=8)
     * Sent back to the client ACK an order receipt, fill or cancel.
 
-3. Market Data (Binary/SBE over UDP)
+3. Market Data (Binary/SBE (Simple Binary Encoding) over UDP)
 - Exchanges use custom binary protocol encoded with SBE distributed via UDP Multicast to provide the lowest possible wire-size & latency.Exchange
 - Thread Pinning
 - Lock-Free Ring Buffers
