@@ -1,0 +1,80 @@
+############################
+# KRaft / Node
+############################
+
+# Unique ID of this Kafka node
+node.id=1
+
+# Single process acts as both broker and controller
+process.roles=broker,controller
+
+# Single-node controller quorum
+controller.quorum.voters=1@localhost:9093 # controler nodes for controller election
+
+
+############################
+# Networking
+############################
+
+# Client traffic on 9092
+# Controller traffic on 9093
+listeners=PLAINTEXT://:9092,CONTROLLER://:9093
+
+# Address returned to Kafka clients
+advertised.listeners=PLAINTEXT://localhost:9092
+
+listener.security.protocol.map=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
+
+controller.listener.names=CONTROLLER
+
+inter.broker.listener.name=PLAINTEXT
+
+
+############################
+# Storage
+############################
+
+log.dirs=/tmp/kafka-logs
+
+
+############################
+# Topic defaults
+############################
+
+num.partitions=3
+
+# MUST be 1 because there is only one broker
+default.replication.factor=1
+
+# Only one replica exists
+min.insync.replicas=1
+
+
+############################
+# Internal Kafka topics
+############################
+
+# Required for single broker
+offsets.topic.replication.factor=1
+
+transaction.state.log.replication.factor=1
+transaction.state.log.min.isr=1
+
+
+############################
+# Retention
+############################
+
+# Keep messages for 3 days
+log.retention.hours=72
+
+# 1 GB log segments
+log.segment.bytes=1073741824
+
+
+############################
+# Threads
+############################
+
+num.network.threads=3
+num.io.threads=8

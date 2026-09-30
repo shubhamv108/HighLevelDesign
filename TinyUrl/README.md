@@ -1,4 +1,4 @@
-### Functional Requirements
+ ### Functional Requirements
     1) our service should generate a shorter and unique alias (shortened URL is nearly one-third the size of the actual URL)
     2) our service should redirect them to the original link
     3) custom short link for their URL

@@ -1,0 +1,17 @@
+# Broker 2
+node.id=2
+process.roles=broker
+
+# Connect to the existing KRaft controller
+controller.quorum.voters=1@localhost:9093
+controller.listener.names=CONTROLLER
+
+# Broker 2 uses a different port
+listeners=PLAINTEXT://:9094
+advertised.listeners=PLAINTEXT://localhost:9094
+
+listener.security.protocol.map=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
+inter.broker.listener.name=PLAINTEXT
+
+# Must have a different storage directory
+log.dirs=/tmp/kafka-logs-2
